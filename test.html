@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags and title -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login and Sign Up</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- Main section for after login -->
+    <div id="afterlogin">
+    <!-- Buttons for various actions -->
+    <div  style="right: 110px; position: fixed;top: 110px; ">
+        <ul>
+        <!-- Button to add students -->
+        <button type="button"  onclick='Reveal("student_adder")'> Add students</button>
+        <!-- Button to add physics questions -->
+        <button type="button"  onclick='Reveal("physics_questions")'> Add physics questions</button>
+        <!-- Button to add chemistry questions -->
+        <button type="button"  onclick='Reveal("chemistry_questions")'> Add chemistry questions</button>
+        <!-- Button to generate questionnaire -->
+        <button type="button"  onclick='Reveal("question_generator")'> Generate Questionnaire</button>
+    </ul>
+    </div>
+    <!-- Form to add new students -->
+    <div id="student_adder" style="right: 400px; position: fixed;top: 200px; ">
+       <p> Add new students </p>
+    <form  id="students"  class="hidden">
+        <!-- Input fields for student data -->
+        <input type="text" placeholder=" name"  name="name" required> <br>
+        <input type="text" placeholder=" last name"  name="surname" required> <br>
+        <input type="text" placeholder=" Email"  name="email" required> <br>
+        
+        <!-- Button to submit student data -->
+        <button type="button" onclick="student_data()" > Submit </button>
+    </form>
+    </div>
+    <!-- Form to add new physics questions -->
+    <div id="physics_questions"  style="right: 200px; position: fixed;top: 200px; ">
+        
+        <p>Add new physics questions</p>
+    <form id="physics"  class="hidden">
+        <!-- Input fields for physics question data -->
+        <input type="text" size="60" placeholder=" Question"  name="question" required> <br>
+        <input type="text" placeholder="option1"  name="option1" required> <br>
+        <input type="text" placeholder="option2"  name="option2" required> <br>
+        <input type="text" placeholder="option3"  name="option3" required> <br>
+        <input type="text" placeholder="option4"  name="option4" required> <br>
+        <input type="text" placeholder="correcct option number"  name="correct_option" required> <br>
+        <!-- Button to submit physics question data -->
+        <button type="button" onclick="senddata1()" > Submit </button>
+    </form>
+    </div>
+    <!-- Form to add new chemistry questions -->
+    <div id="chemistry_questions" style="right: 200px; position: fixed;top: 200px; ">
+        <p>Add new chemistry questions</p>
+        
+    <form  id="chemistry" class="hidden">
+        <!-- Input fields for chemistry question data -->
+        <input type="text" size="60" placeholder=" Question" id="question" name="question" required> <br>
+        <input type="text" placeholder="option1" id="option1" name="option1" required> <br>
+        <input type="text" placeholder="option2" id="option2" name="option2" required> <br>
+        <input type="text" placeholder="option3" id="option3" name="option3" required> <br>
+        <input type="text" placeholder="option4" id="option4" name="option4" required> <br>
+        <input type="text" placeholder="correcct option number" id="correct_option" name="correct_option" required> <br>
+        <!-- Button to submit chemistry question data -->
+        <button type="button" onclick="senddata2()"  > Submit </button>
+    </form>
+    </div>
+    <!-- Form to generate questionnaire -->
+    <div id="question_generator" style="right: 200px; position: fixed;top: 200px; ">
+        <form action="http://localhost/test/random_question_selector.php" method="post">
+           <ul>
+           <!-- Input fields for questionnaire data -->
+           <input type="text" name="username" placeholder="Tittle"> 
+           <input type="text" name="text" placeholder="write expiry time in hours">
+           </ul>
+           <!-- Button to send the questionnaire -->
+           <button type="submit" > Send Questionnaire </button> 
+        </form>
+   </div>
+    </div>
+
+    <!-- Login section -->
+    <div id="loginpage">
+        <div  style="right: 300px; position: fixed;top: 110px; ">
+         <h3> Please log in as admin</h3>
+         <!-- Form for admin login -->
+         <form id="loginform" >
+            <ul>
+            <!-- Input fields for admin login -->
+            <input type="text" name="username" placeholder="username"> 
+            <input type="password" name="password" placeholder="password">
+            </ul>
+            <!-- Button to perform admin login -->
+            <button type="button" onclick="login()"> log in </button> 
+         </form>
+        <!-- Notification for invalid login info -->
+        <h1 id="notification"> Invalid login info</h1> 
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="test.js"> </script>
+</body>
+</html>
